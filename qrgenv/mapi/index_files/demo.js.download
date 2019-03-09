@@ -1,0 +1,79 @@
+(function(b, d) {
+  function g(a) {
+    b("body").toggleClass(a);
+    d.layout.fixSidebar();
+    "layout-boxed" == a && d.controlSidebar._fix(b(".control-sidebar-bg"));
+    b("body").hasClass("fixed") && "fixed" == a && (d.pushMenu.expandOnHover(), d.layout.activate());
+    d.controlSidebar._fix(b(".control-sidebar-bg"));
+    d.controlSidebar._fix(b(".control-sidebar"));
+  }
+  function h(a) {
+    b.each(f, function(a) {
+      b("body").removeClass(f[a]);
+    });
+    b("body").addClass(a);
+    "undefined" !== typeof Storage ? localStorage.setItem("skin", a) : window.alert("Please use a modern browser to properly view this template!");
+    return !1;
+  }
+  var f = "skin-blue skin-black skin-red skin-yellow skin-purple skin-green skin-blue-light skin-black-light skin-red-light skin-yellow-light skin-purple-light skin-green-light".split(" "), k = b("<div />", {id:"control-sidebar-theme-demo-options-tab", "class":"tab-pane active"}), e = b("<li />", {"class":"active"}).html("<a href='#control-sidebar-theme-demo-options-tab' data-toggle='tab'><i class='fa fa-wrench'></i></a>");
+  b("[href='#control-sidebar-home-tab']").parent().before(e);
+  e = b("<div />");
+  e.append("<h4 class='control-sidebar-heading'>");
+  var c = b("<ul />", {"class":"list-unstyled clearfix"}), a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-blue' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px; background: #367fa9;'></span><span class='bg-light-blue' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #222d32;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin'>Blue</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-black' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div style='box-shadow: 0 0 2px rgba(0,0,0,0.1)' class='clearfix'><span style='display:block; width: 20%; float: left; height: 7px; background: #fefefe;'></span><span style='display:block; width: 80%; float: left; height: 7px; background: #fefefe;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #222;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin'>Black</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-purple' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-purple-active'></span><span class='bg-purple' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #222d32;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin'>Purple</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-green' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-green-active'></span><span class='bg-green' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #222d32;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin'>Green</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-red' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-red-active'></span><span class='bg-red' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #222d32;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin'>Red</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-yellow' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-yellow-active'></span><span class='bg-yellow' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #222d32;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin'>Yellow</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-blue-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px; background: #367fa9;'></span><span class='bg-light-blue' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #f9fafc;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin' style='font-size: 12px'>Blue Light</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-black-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div style='box-shadow: 0 0 2px rgba(0,0,0,0.1)' class='clearfix'><span style='display:block; width: 20%; float: left; height: 7px; background: #fefefe;'></span><span style='display:block; width: 80%; float: left; height: 7px; background: #fefefe;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #f9fafc;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin' style='font-size: 12px'>Black Light</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-purple-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-purple-active'></span><span class='bg-purple' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #f9fafc;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin' style='font-size: 12px'>Purple Light</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-green-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-green-active'></span><span class='bg-green' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #f9fafc;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin' style='font-size: 12px'>Green Light</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-red-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-red-active'></span><span class='bg-red' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #f9fafc;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin' style='font-size: 12px'>Red Light</p>");
+  c.append(a);
+  a = b("<li />", {style:"float:left; width: 33.33333%; padding: 5px;"}).append("<a href='javascript:void(0);' data-skin='skin-yellow-light' style='display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)' class='clearfix full-opacity-hover'><div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-yellow-active'></span><span class='bg-yellow' style='display:block; width: 80%; float: left; height: 7px;'></span></div><div><span style='display:block; width: 20%; float: left; height: 20px; background: #f9fafc;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div></a><p class='text-center no-margin' style='font-size: 12px;'>Yellow Light</p>");
+  c.append(a);
+  e.append("<h4 class='control-sidebar-heading'>Skins</h4>");
+  e.append(c);
+  k.append(e);
+  b("#control-sidebar-home-tab").after(k);
+  (function() {
+    var a;
+    "undefined" !== typeof Storage ? a = localStorage.getItem("skin") : (window.alert("Please use a modern browser to properly view this template!"), a = void 0);
+    a && b.inArray(a, f) && h(a);
+    b("[data-skin]").on("click", function(a) {
+      a.preventDefault();
+      h(b(this).data("skin"));
+    });
+    b("[data-layout]").on("click", function() {
+      g(b(this).data("layout"));
+    });
+    b("[data-controlsidebar]").on("click", function() {
+      g(b(this).data("controlsidebar"));
+      var a = !d.options.controlSidebarOptions.slide;
+      (d.options.controlSidebarOptions.slide = a) || b(".control-sidebar").removeClass("control-sidebar-open");
+    });
+    b("[data-sidebarskin='toggle']").on("click", function() {
+      var a = b(".control-sidebar");
+      a.hasClass("control-sidebar-dark") ? (a.removeClass("control-sidebar-dark"), a.addClass("control-sidebar-light")) : (a.removeClass("control-sidebar-light"), a.addClass("control-sidebar-dark"));
+    });
+    b("[data-enable='expandOnHover']").on("click", function() {
+      b(this).attr("disabled", !0);
+      d.pushMenu.expandOnHover();
+      b("body").hasClass("sidebar-collapse") || b("[data-layout='sidebar-collapse']").click();
+    });
+    b("body").hasClass("fixed") && b("[data-layout='fixed']").attr("checked", "checked");
+    b("body").hasClass("layout-boxed") && b("[data-layout='layout-boxed']").attr("checked", "checked");
+    b("body").hasClass("sidebar-collapse") && b("[data-layout='sidebar-collapse']").attr("checked", "checked");
+  })();
+})(jQuery, $.AdminLTE);
